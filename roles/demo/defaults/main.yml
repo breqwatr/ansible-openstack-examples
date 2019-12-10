@@ -1,0 +1,3 @@
+---
+is_https_cert_valid: no
+files_directory: /var/ansible-openstack

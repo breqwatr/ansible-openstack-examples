@@ -1,0 +1,9 @@
+---
+
+- debug:
+    msg: "Starting the Ansible OpenStack Demo!"
+
+- include: image-file.yml
+- include: glance-image.yml
+- include: user-setup.yml
+

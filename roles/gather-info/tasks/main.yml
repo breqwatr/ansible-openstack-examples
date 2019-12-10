@@ -1,0 +1,7 @@
+---
+
+- include: auth.yml
+- include: images.yml
+- include: servers.yml
+- include: projects.yml
+- include: users.yml

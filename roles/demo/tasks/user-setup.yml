@@ -1,0 +1,26 @@
+---
+
+# Some of these properties are used with Breqwatr's UI and background agent,
+# but are not strictly required by OpenStack.
+
+- name: "Create the 'DemoProject' project"
+  os_project:
+    auth: "{{ openstack_auth }}"
+    endpoint_type: admin
+    state: present
+    name: DemoProject
+    description: Ansible-created demo project. Safe to delete.
+    domain_id: default
+    enabled: True
+
+# Creates a user, but doesn't update password if the user already exists
+- name: "Create the user 'DemoUser' in keystone"
+  os_user:
+    auth: "{{ openstack_auth }}"
+    state: present
+    name: DemoUser
+    password: Breqwatr2019
+    update_password: on_create
+    email: demouser@example.com
+    domain: default
+    default_project: DemoProject
